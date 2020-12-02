@@ -89,8 +89,7 @@ class App {
                 this.loadedData = data;
                 this.data = data;
             })
-            .then(() => this.render())
-            .then(() => this.getData());
+            .then(() => this.render());
     }
 
     renderList() {
