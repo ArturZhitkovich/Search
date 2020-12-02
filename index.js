@@ -83,11 +83,6 @@ class App {
         }
     }
 
-    getData() {
-        console.log(this.data);
-        return this.data;
-    }
-
     loadData() {
         Api.loadData()
             .then(data => {
