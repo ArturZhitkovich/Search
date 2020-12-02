@@ -17,21 +17,22 @@ const config = {
 class App {
     constructor({ root, input, caseSensitive, buttonFindForLength, buttonFindForSubString }) {
         this.root = root;
-        this.input = input;
-        this.caseSensitive = caseSensitive;
+
         this.loadedData = [];
         this.data = [];
         this.filter = null;
 
+        this.caseSensitive = caseSensitive;
+        this.input = input;
         this.buttonFindForLength = buttonFindForLength;
         this.buttonFindForSubString = buttonFindForSubString;
-
-        this.loadData();
 
         this.input.addEventListener('blur', this.handleInputBlur('string'));
         this.caseSensitive.addEventListener('change', this.handleCheckBoxChange('caseSensitive'));
         this.buttonFindForLength.addEventListener('click', this.handleFindForLengthClick)
         this.buttonFindForSubString.addEventListener('click',this.handleFindForSubStringClick)
+
+        this.loadData();
     }
 
     handleInputBlur = (key) => (event) => {
@@ -127,4 +128,4 @@ class App {
     }
 }
 
-const newApp = new App(config);
+new App(config);
